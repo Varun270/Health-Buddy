@@ -21,7 +21,7 @@ with open("Ingrediants.txt") as f:
     stripped_words = [w.translate(table) for w in words]
 
     for word in stripped_words:
-        if word.lower() == "ingrediants" or word.lower() == "ingrediant":
+        if word.lower() == "ingredients" or word.lower() == "ingredient":
             continue
         try:
 
