@@ -1,7 +1,7 @@
 # Health-Buddy
 
 ### Project Description -
-Health Buddy is an healthcare app, by using this app we can directly scan the Ingrediants list and find out about the harmful ingrediants that could severely affect our body when consumed for a longer period. It basically points out the items that could be hazardous for our health and give us some information about each and every item.
+Health Buddy is an healthcare website, by using this website we can directly scan the Ingrediants list and find out about the harmful ingrediants that could severely affect our body when consumed for a longer period. It basically points out the items that could be hazardous for our health and give us some information about each and every item. Currently working on the frontend of the website!!!
 
 ### Modules Used - 
 1. pytesseract - Python module used for Optical Character Recognition
