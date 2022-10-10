@@ -23,6 +23,10 @@ f.close()
 
 # Removing punctuations and fetching data for ingrediants
 def get_data(filename="Ingrediants.txt"):
+    """
+    :param filename: Extracted ingredients will be saved here.
+    :return: None
+    """
     with open(filename) as f:
         text = f.read()
         words = text.split(",")
