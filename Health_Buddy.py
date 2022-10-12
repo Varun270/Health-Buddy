@@ -24,8 +24,8 @@ f.close()
 
 def extract_words(filename="Ingrediants.txt"):
     """
-    :param filename: Extracted ingredients will be saved here.
-    :return: List of Ingredients
+    :param filename: Extracted ingredients are processed to get rid of punctuation marks and unwanted symbols.
+    :return: List of Ingredients for easy traversal.
     """
     with open(filename) as f:
         text = f.read()
