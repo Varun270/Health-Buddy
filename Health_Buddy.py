@@ -1,4 +1,4 @@
-# Importing necessary Modules
+# Importing necessary Module
 
 import pytesseract as tess
 import json
