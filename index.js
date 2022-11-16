@@ -64,11 +64,17 @@ app.post("/upload", upload.single("image"), async (req, res, next) => {
       const processedWords = text
         .trim()
         .toLowerCase()
+        .replace(/:/, "")
         .replace(/ingredients/i, "")
+        .replace(/\([A-Za-z\n\s,]+\)/g, "")
         .replace(/\n/gi, " ")
         .split(/,\s/gi);
-      console.log("\nprocessed words: ", processedWords.length);
-      return processedWords;
+      const process = processedWords.map((word) => {
+        return word.trim()
+      })
+      console.log(process)
+      console.log("\nprocessed words: ", process.length);
+      return process;
     })
     .then(async (words) => {
       const imageData = [];

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Image</title>
+</head>
+
+<body class="bg-stone-900">
+  
+  <main class="w-90 mx-auto">
+    <div class="w-full text-center">
+      <img class="mx-auto mt-4 rounded-md" src="/images/<%= image.filename %>" alt="image" />
+    </div>
+    <div class="box">
+
+      <style>
+        td {
+          color: red;
+        }
+      </style>
+      <ul class="my-5 container px-5 lg:px-10 mx-auto ">
+
+        <% for(var i=0; i<image.data.length; i++) { %>
+          <li class="border-y-2">
+            <h1 class="mt-4 mb-4 px-2 capitalize text-stone-200" >
+              <%= image.data[i].word %>
+            </h1>
+
+            <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+              <thead class="bg-gray-100 dark:bg-gray-700">
+
+                <tr class="text-stone-200">
+                  <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    Label</th>
+                  <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    Energy</th>
+                  <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    Protein</th>
+                  <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    Cholesterol</th>
+                  <!-- <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    brand</th> -->
+                  <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    category</th>
+                  <!-- <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                    categoryLabel</th> -->
+                  <!-- <th scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400 break-words">
+                    foodContentsLabel</th> -->
+                </tr>
+              </thead>
+
+              <% for(var j=0; j<(image.data[i].data.length==0?0:1); j++) { %>
+                <tr>
+                  <td class="w-4/12 py-4 px-6  text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.label.split(",")[0] %>
+                  </td>
+                  <td class="w-2/12 py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.nutrients.ENERC_KCAL %>
+                  </td>
+                  <td class="w-2/12 py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.nutrients.PROCNT; %>
+                  </td>
+                  <td class="w-2/12 py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.nutrients.CHOCDF; %>
+                  </td>
+                  <!-- <td class="py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.brand; %>
+                  </td> -->
+                  <td class="w-2/12 py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.category; %>
+                  </td>
+                  <!-- <td class="py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap ">
+                    <%= image.data[i].data[j].food.categoryLabel; %>
+                  </td> -->
+                  <!-- <td
+                    class="py-4 px-6 text-sm font-medium text-stone-200 whitespace-nowrap  break-words w-1/2">
+                    <%= image.data[i].data[j].food.foodContentsLabel; %>
+                  </td> -->
+                </tr>
+                <% } %>
+            </table>
+
+          </li>
+          <% } %>
+      </ul>
+
+      <%if (image.data.length==0) { %>
+        <h1 class="mt-4 w-full text-center mb-4 px-2 capitalize">
+          Nothing Found Hear 📨
+        </h1>
+        <% } %>
+
+    </div>
+  </main>
+
+  <script>
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+
+    if (!email || !password) {
+      window.location.replace(`https://${window.location.hostname}/login`);
+    }
+  </script>
+
+</body>
+
+</html>

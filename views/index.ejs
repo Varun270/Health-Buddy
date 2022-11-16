@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: #cacdd2;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* background: #000000dc url(/Images/svg8.png) no-repeat;? */
+        /* background: #0E141B url(/Images/svg4.png) no-repeat; */
+        background-color: #171717;
+        background-size: auto;
+      }
+      input[type="file"],
+      input[type="submit"] {
+        background-color: #323232;
+        border: none;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      #navbar-container {
+        /* border: 2px solid red; */
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      #navbar-items {
+        /* border: 2px solid green; */
+        border-bottom: 2px solid #cacdd2;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        margin-bottom: 0px;
+        width: 30%;
+      }
+
+      #navbar-items ul {
+        margin: 0.1em;
+        display: flex;
+        list-style: none;
+      }
+
+      #navbar-items ul li {
+        padding: 10px;
+        margin: 3px;
+        font-size: 1.01rem;
+        letter-spacing: 2px;
+      }
+
+      #navbar-items ul li:hover {
+        background-color: #ffffff;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #101010;
+      }
+
+      #container {
+        padding: 5px;
+        margin: 15px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+      }
+
+      #cover-image {
+        padding: 10px;
+        margin: 5px;
+        height: 30vh;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        opacity: 80%;
+      }
+
+      #cover-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        /* box-shadow: 0px 1px 25px 2px rgba(255, 255, 255, 0.301); */
+      }
+
+      #container-details {
+        /* padding: 10px; */
+        margin: 5px;
+        /* border: 1px solid #cacdd2; */
+        border-radius: 15px;
+        background-color: #b4b4b42c;
+        width: auto;
+        padding: 1.2rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        margin-top: 2rem;
+        height: auto;
+      }
+
+      #container-details p {
+        line-height: 1.5em;
+        word-wrap: break-word;
+        word-spacing: 5px;
+        text-indent: 2em;
+        font-weight: 500;
+        text-align: justify;
+      }
+
+      #container-details span {
+        line-height: 1.5em;
+        word-wrap: break-word;
+        word-spacing: 5px;
+        text-indent: 2em;
+        font-weight: 500;
+      }
+
+      #btn-readmore {
+        margin-top: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #cacdd2;
+        color: #0b0b0b;
+      }
+
+      #btn-readmore:hover {
+        cursor: pointer;
+        background-color: black;
+        color: #ff4c29;
+      }
+
+      #container-2 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+      }
+
+      #container-upload {
+        margin: 1.1rem;
+        padding: 1.1rem;
+        height: 40vh;
+        width: 80vw;
+        border: 2px solid #cacdd2;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      #container-share {
+        margin: 1.1rem;
+        padding: 1.1rem;
+        height: 40vh;
+        width: 96%;
+        border: 2px solid #cacdd2;
+        border-radius: 10px;
+      }
+
+      .upload-box {
+        padding: 1.5rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .upload-box svg {
+        height: 10vh;
+        width: 8vw;
+      }
+
+      .upload-box.pdf {
+        width: 4rem;
+        height: 4rem;
+        color: #fff;
+      }
+
+      .upload-box span {
+        color: #fff;
+      }
+
+      .fileInput-label {
+        margin: -0.5rem;
+        padding: 1.2rem;
+        background-color: rgba(255, 255, 255, 0.118);
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 0px 1px 30px 1px black;
+        font-size: 17px;
+      }
+
+      label.fileInput-label {
+      }
+
+      #file-input {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+      .fileInput-label:hover {
+        background-color: #ff4c29;
+      }
+
+      /*Table*/
+
+      td,
+      th {
+        border: 1px solid rgb(190, 190, 190);
+        padding: 10px;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      tr:nth-child(even) {
+        /* background-color: #eee; */
+      }
+
+      th[scope="col"] {
+        /* background-color: #696969; */
+        color: #fff;
+      }
+
+      th[scope="row"] {
+        /* background-color: #d7d9f2; */
+      }
+
+      caption {
+        padding: 10px;
+        caption-side: bottom;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        font-size: 0.8rem;
+      }
+    </style>
+    <title><%= typeof title != 'undefined' ? title : 'Health Buddy' %></title>
+  </head>
+  <body>
+    <div id="navbar-container">
+      <div id="navbar-items">
+        <ul>
+          <li><a href=""> Home</a></li>
+          <!-- <li><a href="/about"> About Us</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <div id="container-box">
+      <div id="cover-image">
+        <img src="./Images/background.jpg" alt="Background Image" />
+      </div>
+      <div id="container">
+        <!-- <div id="container-details">
+          <p></p>
+          <h6 id="data"></h6>
+        </div> -->
+        <div id="container-2">
+          <!-- <div id="container-upload"> -->
+          <div class="upload-box">
+            <!-- <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="pdf"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg> -->
+            <main>
+              <form
+                method="post"
+                enctype="multipart/form-data"
+                action="/upload"
+              >
+                <input type="file" name="image" accept="image/*" />
+                <input type="submit" value="Submit" />
+              </form>
+            </main>
+            <!-- <label class="fileInput-label" for="file-input">
+                <input type="file" id="file-input" />
+
+                <span>Upload Scanned Image</span>
+                
+              </label> -->
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container pb-0">
+        <!-- Section: Social media -->
+        <section>
+          <!-- Github -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://github.com/Varun270/Health-Buddy/"
+            target="_blank"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <b>© 2022 Copyright</b>
+      </div> -->
+      <!-- Copyright -->
+    </footer>
+    <script>
+      const email = localStorage.getItem("email");
+      const password = localStorage.getItem("password");
+
+      if (!email || !password) {
+        window.location.replace(`https://${window.location.hostname}/login`);
+      }
+    </script>
+  </body>
+</html>

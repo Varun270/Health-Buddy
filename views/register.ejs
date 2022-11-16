@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Register</title>
+  </head>
+  <body>
+    <main class="min-h-screen grid place-content-center bg-stone-900">
+      <div class="w-full p-4 flex items-center justify-center bg-stone-600">
+        <div class="py-6 px-10 sm:max-w-md w-full">
+          <div
+            class="sm:text-3xl text-2xl font-semibold text-center text-white mb-12"
+          >
+            Registration Form
+          </div>
+          <form method="post" action="/register" enctype="multipart/form-data">
+            <div>
+              <input
+                type="text"
+                name="name"
+                class="focus:outline-none border-b p-1 w-full pb-2 border-sky-400 placeholder-gray-500 mt-8 bg-stone-700"
+                placeholder="Name "
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                class="focus:outline-none border-b p-1 w-full pb-2 border-sky-400 placeholder-gray-500 my-8 bg-stone-700"
+                placeholder="Eamil Adress "
+              />
+            </div>
+            <div class="">
+              <input
+                type="password"
+                name="password"
+                class="focus:outline-none p-1 border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8 bg-stone-700"
+                placeholder="Password "
+              />
+            </div>
+            <div class="flex justify-center my-6">
+              <button
+                class="rounded-full p-3 w-full sm:w-56 bg-white text-stone-900 text-lg font-semibold"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

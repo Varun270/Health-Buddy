@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://asset.plgworks.com/_next/static/css/9549c5cd2a77dbfa.css"
+      data-n-g=""
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: #cacdd2;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1.3rem;
+        padding-top: 5px;
+        background-color: #071018;
+        overflow-x: hidden;
+      }
+      a {
+        color: whitesmoke;
+      }
+      a:hover {
+        color: white;
+        text-decoration: none;
+      }
+      #navbar-container {
+        /* border: 2px solid red; */
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+      }
+      #navbar-items {
+        /* border: 2px solid green; */
+        border-bottom: 2px solid #cacdd2;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        margin-bottom: 0px;
+        width: 30%;
+      }
+      #navbar-items ul {
+        margin: 0.1em;
+        display: flex;
+        list-style: none;
+      }
+
+      #navbar-items ul li {
+        padding: 10px;
+        margin: 6px;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+      }
+
+      #navbar-items ul li:hover {
+        background-color: #ff4c29;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #101010;
+      }
+
+      #container-2 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        /* background-color: rgb(244, 110, 62); */
+        padding: 20px 20px 0px 20px;
+      }
+      #container-upload {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 1.1rem;
+        padding: 1.1rem;
+        height: 40vh;
+        width: 80vw;
+        /* border: 2px solid #cacdd2; */
+        border-radius: 10px;
+        box-sizing: border-box;
+        background-color: rgb(0 37 121);
+        /* background-image: url(/Images/black\ background.jfif); */
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #container-upload h1 {
+        font-size: 4rem;
+      }
+      #container-upload p {
+        margin: 1.5rem;
+        font-size: 1.2rem;
+      }
+      .feature-section {
+        display: flex;
+        justify-content: center;
+        background-color: lightblue;
+        padding: 20px;
+        margin: 3rem;
+        border-radius: 10px;
+      }
+      .header-name h1 {
+        padding: 20px;
+        font-size: 9rem;
+        color: black;
+        justify-content: center;
+      }
+
+      .container-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1.3rem;
+        width: 80%;
+      }
+      .container-box-1 {
+        display: flex;
+      }
+      .container-card {
+        display: flex;
+        margin: 1.1rem;
+      }
+
+      .content p {
+        padding-top: 30px;
+        font-size: 1.2em;
+        color: black;
+        font-weight: 400;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      .content {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 50px;
+        padding: 0.4em 2em;
+        font-size: 15px;
+        background: rgba(225, 225, 225, 0);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        transform: scale(0.9);
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 0.144);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
+        overflow: hidden;
+        transition: all 0.4s;
+      }
+      .card {
+        width: 25rem;
+        height: 20rem;
+        background: rgb(0, 87, 120);
+        position: relative;
+        /* border: 2px solid gray; */
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgb(0 0 0 / 12%);
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .card:hover .content {
+        height: 100%;
+      }
+
+      .card h2 {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background: rgba(225, 225, 225, 0);
+        margin: 0% 0% 4% 0%;
+        text-align: center;
+        font-size: 1.8rem;
+        color: rgb(24, 24, 24);
+      }
+
+      .Team-section {
+        /* background: #ffc548; */
+        background: lightcoral;
+        height: auto;
+        color: black;
+      }
+      .Team-info {
+        display: flex;
+      }
+      /* .team-info-right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+} */
+      /* .team-info-left{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+} */
+      .member {
+        display: flex;
+        flex-direction: column;
+        /* padding: 2rem; */
+        overflow-x: none;
+        width: 90%;
+        height: 20rem;
+        /* justify-content: space-around; */
+        align-items: center;
+        border-radius: 10px;
+        margin: 1rem;
+        background-color: #071018;
+        color: whitesmoke;
+      }
+      .member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 2rem;
+        border: 2px solid grey;
+      }
+      .member p {
+        font-size: 15px;
+        padding: 10px;
+        word-wrap: break-word;
+      }
+
+      footer {
+        padding: 15px;
+        font-size: medium;
+      }
+
+      .Team-section {
+        display: none;
+      }
+      /*---------------------scroll bar copied--------------*/
+      body::-webkit-scrollbar-track {
+        padding: 2px 0;
+        background-color: #0b0b0b;
+      }
+      body::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #686868;
+        border: 1px solid #000;
+      }
+      body::-webkit-scrollbar {
+        width: 7px;
+      }
+      body .finished::-webkit-scrollbar-track {
+        padding: 2px 0;
+        background-color: #0b0b0b;
+      }
+      body .finished::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #686868;
+        border: 1px solid #000;
+      }
+      body .finished::-webkit-scrollbar {
+        width: 7px;
+      }
+      /*--------------------------------------------------------*/
+    </style>
+    <title>About-Us</title>
+  </head>
+
+  <body>
+    <div id="navbar-container">
+      <div id="navbar-items">
+        <ul>
+          <li><a href="/"> Home</a></li>
+          <li><a href=""> About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="container-2">
+      <div id="container-upload">
+        <h1>about tate</h1>
+
+        <div class="upload-box">
+          <p>
+            Lorem ipsum dolor sit amet colm! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Error ab, modi officiis est,
+            consequatur corrupti velit illo voluptates rem, quidem saepe
+            possimus aspernatur libero iusto blanditiis dolorem quae voluptatem
+            numquam? Obcaecati nihil culpa et! Tenetur accusamus sint molestiae
+            possimus illum doloremque eos ab obcaecati, repudiandae, voluptates
+            laborum nulla debitis eveniet!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="feature-section">
+      <div class="header-name">
+        <h1>Our Mission</h1>
+      </div>
+      <div class="container-box">
+        <div class="container-box-1">
+          <div class="container-card">
+            <div>
+              <div class="card">
+                <img
+                  src="/Images/Sky with birds.jpg"
+                  alt="purpleskywithsomebirds"
+                />
+                <div class="content">
+                  <h2>" Motivational Quote "</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Excepturi, doloremque nostrum quas iure natus quam
+                    laboriosam. Delectus optio quod fugiat dolorem perferendis
+                    dignissimos tenetur, accusamus architecto veniam amet
+                    numquam consequatur!.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-card">
+            <div class="card">
+              <img
+                src="/Images/Sky with birds.jpg"
+                alt="purpleskywithsomebirds"
+              />
+              <div class="content">
+                <h2>" Motivational Quote "</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Excepturi, doloremque nostrum quas iure natus quam laboriosam.
+                  Delectus optio quod fugiat dolorem perferendis dignissimos
+                  tenetur, accusamus architecto veniam amet numquam
+                  consequatur!.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-box-1">
+          <div class="container-card">
+            <div class="card">
+              <img
+                src="/Images/Sky with birds.jpg"
+                alt="purpleskywithsomebirds"
+              />
+              <div class="content">
+                <h2>" Motivational Quote "</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Excepturi, doloremque nostrum quas iure natus quam laboriosam.
+                  Delectus optio quod fugiat dolorem perferendis dignissimos
+                  tenetur, accusamus architecto veniam amet numquam
+                  consequatur!.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-card">
+            <div class="card">
+              <img
+                src="/Images/Sky with birds.jpg"
+                alt="purpleskywithsomebirds"
+              />
+              <div class="content">
+                <h2>" Motivational Quote "</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Excepturi, doloremque nostrum quas iure natus quam laboriosam.
+                  Delectus optio quod fugiat dolorem perferendis dignissimos
+                  tenetur, accusamus architecto veniam amet numquam
+                  consequatur!.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Team-section">
+      <div class="header-name">
+        <h1>Our Team</h1>
+      </div>
+      <div class="Team-info">
+        <div class="team-info-right">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+                ducimus illum, officia nulla eligendi non omnis ipsam
+                praesentium ea nesciunt?
+              </p>
+            </h3>
+          </div>
+        </div>
+
+        <div class="team-info-left">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+              ducimus illum, officia nulla eligendi non omnis ipsam praesentium
+              ea nesciunt?
+            </p>
+          </div>
+        </div>
+
+        <div class="team-info-right">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+              ducimus illum, officia nulla eligendi non omnis ipsam praesentium
+              ea nesciunt?
+            </p>
+          </div>
+        </div>
+
+        <div class="team-info-left">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+              ducimus illum, officia nulla eligendi non omnis ipsam praesentium
+              ea nesciunt?
+            </p>
+          </div>
+        </div>
+
+        <div class="team-info-right">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+              ducimus illum, officia nulla eligendi non omnis ipsam praesentium
+              ea nesciunt?
+            </p>
+          </div>
+        </div>
+
+        <div class="team-info-left">
+          <div class="member">
+            <img src="Images/black background.jfif" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
+              ducimus illum, officia nulla eligendi non omnis ipsam praesentium
+              ea nesciunt?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container pb-0">
+        <!-- Section: Social media -->
+        <section>
+          <!-- Github -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://github.com/Varun270/Health-Buddy/"
+            target="_blank"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <b>© 2022 Copyright</b>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+  <script>
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+
+    if (!email || !password) {
+      window.location.replace(`https://${window.location.hostname}/login`);
+    }
+  </script>
+</html>
